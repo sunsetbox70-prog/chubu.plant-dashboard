@@ -1,0 +1,283 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.db-header { padding: 1.5rem 0 1rem; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 1.5rem; }
+.db-header p { font-size: 13px; color: var(--color-text-secondary); margin-top: 4px; }
+.db-header h1 { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+.section-label { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; }
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+.metric-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 14px 16px; }
+.metric-card .label { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 6px; }
+.metric-card .value { font-size: 22px; font-weight: 500; color: var(--color-text-primary); }
+.metric-card .change { font-size: 12px; margin-top: 4px; }
+.up { color: #1D9E75; }
+.down { color: #A32D2D; }
+.chart-wrap { margin-bottom: 1.5rem; }
+.chart-canvas-wrap { position: relative; width: 100%; }
+.insight-box { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 1.5rem; background: var(--color-background-primary); }
+.insight-box h3 { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 10px; }
+.insight-item { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; padding: 4px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.insight-item:last-child { border-bottom: none; }
+.badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: var(--border-radius-md); margin-right: 6px; font-weight: 500; }
+.badge-good { background: #EAF3DE; color: #3B6D11; }
+.badge-warn { background: #FAEEDA; color: #854F0B; }
+.badge-bad { background: #FCEBEB; color: #A32D2D; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--color-text-secondary); margin-bottom: 8px; }
+.legend span { display: flex; align-items: center; gap: 5px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+.tabs { display: flex; gap: 6px; margin-bottom: 12px; }
+.tab-btn { font-size: 12px; padding: 5px 14px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: transparent; cursor: pointer; color: var(--color-text-secondary); }
+.tab-btn.active { background: var(--color-background-secondary); color: var(--color-text-primary); border-color: var(--color-border-primary); }
+.creative-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.creative-table th { text-align: left; padding: 8px 10px; font-size: 11px; font-weight: 500; color: var(--color-text-secondary); border-bottom: 0.5px solid var(--color-border-tertiary); }
+.creative-table td { padding: 8px 10px; color: var(--color-text-primary); border-bottom: 0.5px solid var(--color-border-tertiary); }
+.creative-table tr:last-child td { border-bottom: none; }
+.bar-inline { height: 6px; border-radius: 3px; background: #5DCAA5; display: inline-block; vertical-align: middle; }
+.divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.5rem 0; }
+</style>
+
+<h2 class="sr-only">中部プラントサービス Instagram広告パフォーマンスダッシュボード（2026年3月〜5月）</h2>
+
+<div class="db-header">
+  <h1>中部プラントサービス｜IG広告 パフォーマンスレポート</h1>
+  <p>対象期間：2026年3月13日〜5月13日　　データソース：RAWシート・Notion週次DB</p>
+</div>
+
+<div class="section-label">月次サマリー（主要KPI）</div>
+<div class="metrics-grid">
+  <div class="metric-card">
+    <div class="label">3月 リンククリック</div>
+    <div class="value">2,436</div>
+    <div class="change" style="color: var(--color-text-secondary);">静止画期（3/13〜3/31）</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">4月 リンククリック</div>
+    <div class="value">14,272</div>
+    <div class="change up"><i class="ti ti-arrow-up" aria-hidden="true"></i> +486% vs 3月</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">5月 リンククリック</div>
+    <div class="value">5,321</div>
+    <div class="change" style="color: var(--color-text-secondary);">5/13まで（配信中）</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">3月 平均CPC</div>
+    <div class="value">¥340</div>
+    <div class="change" style="color: var(--color-text-secondary);">静止画期</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">4月 平均CPC</div>
+    <div class="value">¥51</div>
+    <div class="change up"><i class="ti ti-arrow-down" aria-hidden="true"></i> −85% vs 3月</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">5月 平均CPC</div>
+    <div class="value">¥53</div>
+    <div class="change" style="color: var(--color-text-secondary);">ほぼ前月並み</div>
+  </div>
+</div>
+
+<div class="chart-wrap">
+  <div class="section-label">月次クリック数推移</div>
+  <div class="legend">
+    <span><span class="legend-dot" style="background:#1D9E75;"></span>リンククリック数</span>
+    <span><span class="legend-dot" style="background:#378ADD; border: 1px dashed #378ADD;"></span>平均CPC（円）</span>
+  </div>
+  <div class="chart-canvas-wrap" style="height:220px;">
+    <canvas id="monthlyChart" role="img" aria-label="月次クリック数と平均CPCの推移。3月2436クリック/¥340、4月14272クリック/¥51、5月5321クリック/¥53">3月2,436クリック、4月14,272クリック、5月5,321クリック</canvas>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="chart-wrap">
+  <div class="section-label">日次クリック数推移（3月〜5月）</div>
+  <div class="legend">
+    <span><span class="legend-dot" style="background:#B5D4F4; border:1px solid #378ADD;"></span>静止画期（3月）</span>
+    <span><span class="legend-dot" style="background:#1D9E75;"></span>動画期（4〜5月）</span>
+  </div>
+  <div class="chart-canvas-wrap" style="height:260px;">
+    <canvas id="dailyChart" role="img" aria-label="3月から5月の日次クリック数推移。4月1日の動画配信開始で急増。">日次クリック推移グラフ</canvas>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="chart-wrap">
+  <div class="section-label">クリエイティブ別クリック数ランキング（動画期 全期間）</div>
+  <div class="chart-canvas-wrap" style="height:520px;">
+    <canvas id="creativeChart" role="img" aria-label="クリエイティブ別クリック数ランキング。名古屋チュプラのうた篇が5032クリックで最多。">クリエイティブ別クリック数</canvas>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="insight-box">
+  <h3><i class="ti ti-bulb" aria-hidden="true"></i> Claude による数値見解</h3>
+  <div class="insight-item">
+    <span class="badge badge-good">最大成果</span>動画クリエイティブへの切り替え（4/1）でクリック数が約5倍に急増し、CPCは¥340→¥51と<strong>85%削減</strong>。広告効率の改善は明確かつ顕著で、動画移行は正しい判断だった。
+  </div>
+  <div class="insight-item">
+    <span class="badge badge-good">注目クリエイティブ</span>「名古屋_③チュプラのうた篇_動画」が累計5,032クリックで断トツ1位。「千葉県_①たもつ篇」「鹿児島県_①たもつ篇」が続く。チュプラのうた篇・たもつ篇の2クリエイティブが全体を牽引している。
+  </div>
+  <div class="insight-item">
+    <span class="badge badge-warn">要注意トレンド</span>5月のCPC（¥53）は4月（¥51）とほぼ同水準だが、日次クリックは500〜600台に落ち着いている。4月上旬の700〜1,200クリック/日と比較すると減少傾向があり、クリエイティブの疲弊（バナー疲れ）の可能性がある。
+  </div>
+  <div class="insight-item">
+    <span class="badge badge-warn">ささえる篇の弱さ</span>「ささえる篇」はエリアによってCPCが¥59〜¥69と他クリエイティブより高め。配信量・予算配分の見直しを検討すべき。
+  </div>
+  <div class="insight-item">
+    <span class="badge badge-bad">配信停止ロス</span>4/6・5/13に全配信停止が発生。特に4月は動画移行直後の重要な蓄積期間であり、停止による機会損失が懸念される。原因の確認と再発防止策の検討を推奨。
+  </div>
+  <div class="insight-item">
+    <span class="badge badge-good">5月エリア拡大効果</span>5月から石川＆新潟、鹿児島＆熊本、宮崎＆大分、福井＆岐阜＆富山へ拡大。各エリアでCTR 0.8〜1.0%超を維持しており、スケールの余地がある。
+  </div>
+</div>
+
+<div class="chart-wrap">
+  <div class="section-label">クリエイティブ別 CPC比較（動画期）</div>
+  <div class="legend">
+    <span><span class="legend-dot" style="background:#5DCAA5;"></span>たもつ篇</span>
+    <span><span class="legend-dot" style="background:#378ADD;"></span>チュプラのうた篇</span>
+    <span><span class="legend-dot" style="background:#EF9F27;"></span>ささえる篇</span>
+  </div>
+  <div class="chart-canvas-wrap" style="height:300px;">
+    <canvas id="cpcChart" role="img" aria-label="クリエイティブ別CPC比較。ささえる篇が最も高く、チュプラのうた篇・たもつ篇は低コスト。">CPC比較グラフ</canvas>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
+const textColor = isDark ? '#b4b2a9' : '#5f5e5a';
+const baseFont = { family: 'inherit', size: 12 };
+
+new Chart(document.getElementById('monthlyChart'), {
+  type: 'bar',
+  data: {
+    labels: ['3月（静止画）', '4月（動画）', '5月（動画・配信中）'],
+    datasets: [
+      {
+        label: 'リンククリック数',
+        data: [2436, 14272, 5321],
+        backgroundColor: ['#B5D4F4', '#1D9E75', '#5DCAA5'],
+        borderColor: ['#378ADD', '#0F6E56', '#1D9E75'],
+        borderWidth: 1,
+        yAxisID: 'y',
+        order: 2
+      },
+      {
+        label: '平均CPC（円）',
+        data: [340, 51, 53],
+        type: 'line',
+        borderColor: '#378ADD',
+        backgroundColor: 'transparent',
+        borderWidth: 2,
+        borderDash: [4, 4],
+        pointBackgroundColor: '#378ADD',
+        pointRadius: 5,
+        yAxisID: 'y2',
+        order: 1
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: textColor, font: baseFont } },
+      y: { grid: { color: gridColor }, ticks: { color: textColor, font: baseFont }, title: { display: true, text: 'クリック数', color: textColor, font: baseFont } },
+      y2: { position: 'right', grid: { drawOnChartArea: false }, ticks: { color: '#378ADD', font: baseFont, callback: v => '¥' + v }, title: { display: true, text: 'CPC（円）', color: '#378ADD', font: baseFont } }
+    }
+  }
+});
+
+const dailyLabels = ['3/13','3/14','3/15','3/16','3/17','3/18','3/19','3/20','3/21','3/22','3/23','3/24','3/25','3/26','3/27','3/28','3/29','3/30','3/31','4/1','4/2','4/3','4/4','4/5','4/6','4/7','4/8','4/9','4/10','4/11','4/12','4/13','4/14','4/15','4/16','4/17','4/18','4/19','4/20','4/21','4/22','4/23','4/24','4/25','4/26','4/27','4/28','4/29','4/30','5/1','5/2','5/3','5/4','5/5','5/6','5/7','5/8','5/9','5/10','5/11','5/12','5/13'];
+const dailyData = [112,132,117,133,116,119,123,127,143,130,136,118,74,121,126,126,145,133,125,674,925,679,739,320,0,456,1227,497,709,586,826,745,656,742,693,817,755,954,795,518,298,189,220,249,260,271,206,281,206,483,559,615,528,432,625,569,507,558,525,457,463,0];
+const bgColors = dailyLabels.map((l,i) => i < 19 ? '#B5D4F4' : '#5DCAA5');
+const borderColors = dailyLabels.map((l,i) => i < 19 ? '#378ADD' : '#1D9E75');
+
+new Chart(document.getElementById('dailyChart'), {
+  type: 'bar',
+  data: {
+    labels: dailyLabels,
+    datasets: [{
+      label: '日次クリック数',
+      data: dailyData,
+      backgroundColor: bgColors,
+      borderColor: borderColors,
+      borderWidth: 0.5
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 10 }, autoSkip: true, maxTicksLimit: 20, maxRotation: 45 } },
+      y: { grid: { color: gridColor }, ticks: { color: textColor, font: baseFont } }
+    }
+  }
+});
+
+new Chart(document.getElementById('creativeChart'), {
+  type: 'bar',
+  indexAxis: 'y',
+  data: {
+    labels: [
+      '名古屋 チュプラのうた篇',
+      '千葉 たもつ篇',
+      '鹿児島 たもつ篇',
+      '石川 チュプラのうた篇',
+      '千葉 チュプラのうた篇',
+      '名古屋 たもつ篇',
+      '千葉 ささえる篇',
+      '宮崎 たもつ篇',
+      '宮崎 ささえる篇',
+      '石川 ささえる篇'
+    ],
+    datasets: [{
+      label: '合計クリック数',
+      data: [5032, 1812, 1641, 1499, 1197, 1180, 1027, 967, 703, 352],
+      backgroundColor: [
+        '#1D9E75','#5DCAA5','#5DCAA5','#378ADD','#378ADD','#5DCAA5','#EF9F27','#5DCAA5','#EF9F27','#EF9F27'
+      ],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: textColor, font: baseFont } },
+      y: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 12 } } }
+    }
+  }
+});
+
+const cpcAreaLabels = ['名古屋', '千葉', '石川', '鹿児島', '宮崎', '福井'];
+const cpcTamostu = [45, 52, 40, 54, 53, 55];
+const cpcChupla = [48, 43, 51, 77, 47, 55];
+const cpcSasaeru = [59, 48, 45, null, 52, 69];
+
+new Chart(document.getElementById('cpcChart'), {
+  type: 'bar',
+  data: {
+    labels: cpcAreaLabels,
+    datasets: [
+      { label: 'たもつ篇', data: cpcTamostu, backgroundColor: '#5DCAA5', borderWidth: 0 },
+      { label: 'チュプラのうた篇', data: cpcChupla, backgroundColor: '#378ADD', borderWidth: 0 },
+      { label: 'ささえる篇', data: cpcSasaeru, backgroundColor: '#EF9F27', borderWidth: 0 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: textColor, font: baseFont }, stacked: false },
+      y: { grid: { color: gridColor }, ticks: { color: textColor, font: baseFont, callback: v => '¥' + v }, title: { display: true, text: 'CPC（円）', color: textColor, font: baseFont } }
+    }
+  }
+});
+</script>
